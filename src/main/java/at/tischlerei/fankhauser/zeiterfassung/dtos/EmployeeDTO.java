@@ -3,6 +3,8 @@ package at.tischlerei.fankhauser.zeiterfassung.dtos;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,10 +26,12 @@ public class EmployeeDTO{
 
     private String phone;
 
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private LocalDate birthday;
 
     private String address;
 
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private LocalDate dateOfJoining;
 
     private Long hourlyRate;

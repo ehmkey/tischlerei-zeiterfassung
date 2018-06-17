@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: htmlhead" th:with="title='Mitarbeiter¸bersicht'"></head>
+
+<body>
+	<div th:replace="layout :: navbar">(navbar)</div>
+
+
+	<div class="container">
+		<div class="starter-template">
+			<h1>Mitarbeiter</h1>
+
+
+			<div class="container">
+				<div th:if="${not #lists.isEmpty(employees)}">
+					<h2>Alle Mitarbeiter</h2>
+					<table class="table table-striped">
+						<tr>
+							<th>Vorname</th>
+							<th>Nachname</th>
+							<th>Type</th>
+							<th>Category</th>
+							<th>Price</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+						<tr th:each="employee : ${employees}">
+							<td th:text="${employee.firstname}">Vorname</td>
+							<td th:text="${employee.lastname}">Nachname</td>
+							<td th:text="${employee.birthday}">Geburtsdatum</td>
+							<td th:text="${employee.dateOfJoining}">Eintrittsdatum</td>
+							<td><a th:href="${'/employees/' + employee.id}"
+								class="btn btn-default">Edit</a></td>
+							<td><a th:href="${'/employees/delete/' + employee.id}"
+								class="btn btn-danger">Delete</a></td>
+						</tr>
+					</table>
+				</div>
+				<div th:if="${#lists.isEmpty(employees)}" class="alert alert-info"
+					role="alert">Keine Mitarbeiter vorhanden</div>
+			</div>
+			<a href="/employees/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Hinzuf√ºgen</a>
+		</div>
+	</div>
+
+	<div th:replace="layout :: footer">(footer)</div>
+</body>
+</html>

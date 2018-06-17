@@ -35,6 +35,10 @@ public class WorkedOrder {
     @NotNull
     @Column(name = "working_date", nullable = false)
     private LocalDate workingDate;
+    
+    @NotNull
+    @Column(name = "working_hours", nullable = false)
+    private Double workingHours;
 
     @OneToOne
     @JoinColumn(unique = true)

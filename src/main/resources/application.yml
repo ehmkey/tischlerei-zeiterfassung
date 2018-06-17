@@ -4,3 +4,10 @@ spring:
   profiles:
     active:
     - dev
+  thymeleaf:
+    mode: HTML5
+    
+logging:
+  file: logs/zeiterfassung.log
+  level:
+    at.tischlerei.fankhauser: DEBUG

@@ -1,0 +1,2 @@
+insert into employees (id, firstname, lastname, phone, birthday, address, date_of_joining, hourly_rate, iban, bic, bankname) VALUES
+(1, 'Herbert', 'Müller', '+43664123', '1990-10-01', 'Hauptstraße 1, '9462 Bad St. Leonhard', '2000-01-01', 100, 'AT1234123213123', 'BIC134', 'Dummy Bank');

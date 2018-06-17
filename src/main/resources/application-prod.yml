@@ -2,7 +2,7 @@ spring:
   datasource:
     username: postgres
     password: postgres
-    url: jdbc:mysql://ubuntuserver:3306/task_bucket?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&verifyServerCertificate=false&useSSL=false
+    url: 
     driverClassName: com.mysql.jdbc.Driver 
   flyway:
     enabled: true
