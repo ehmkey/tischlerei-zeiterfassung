@@ -29,7 +29,11 @@ public class EmployeeDTO{
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private LocalDate birthday;
 
-    private String address;
+    private String zip;
+
+    private String street;
+
+    private String city;
 
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private LocalDate dateOfJoining;

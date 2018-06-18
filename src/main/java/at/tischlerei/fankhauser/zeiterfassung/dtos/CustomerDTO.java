@@ -1,5 +1,7 @@
 package at.tischlerei.fankhauser.zeiterfassung.dtos;
 
+import javax.persistence.Column;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,12 @@ public class CustomerDTO{
 
     private String phone;
 
-    private String contact;
+    @Column(name = "additonal_information")
+    private String additonalInformation;
 
-    private String address;
+    private String zip;
+
+    private String street;
+
+    private String city;
 }

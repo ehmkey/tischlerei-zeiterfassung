@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="layout :: htmlhead" th:with="title='Mitarbeiterübersicht'"></head>
+<head th:include="layout :: htmlhead" th:with="title='Kundenübersicht'"></head>
 
 <body>
 	<div th:replace="layout :: navbar">(navbar)</div>
@@ -7,15 +7,15 @@
 
 	<div class="container">
 		<div class="starter-template">
-			<h1>Mitarbeiterübersicht</h1>
+			<h1>Kundenübersicht</h1>
 
 
 			<div class="container">
 				<div th:if="${not #lists.isEmpty(employees)}">
 					<table class="table table-striped">
 						<tr>
-							<th>Vorname</th>
-							<th>Nachname</th>
+							<th>Kunde</th>
+							<th>Telefonnummer</th>
 							<th>Bearbeiten</th>
 							<th>Löschen</th>
 						</tr>

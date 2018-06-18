@@ -1,7 +1,3 @@
-body {
-  padding-top: 50px;
-}
-
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -15,3 +11,7 @@ body {
        z-index: 2;
        color: red;
    }
+   
+.container {
+	padding-top: 15px;
+}

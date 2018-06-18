@@ -32,27 +32,6 @@ public class EmployeeResource {
 	private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 	private MapperFacade mapper = mapperFactory.getMapperFacade();
 
-    /**
-     * POST  /employees : Create a new employee.
-     *
-     * @param employeeDTO the employeeDTO to create
-     * @return the ResponseEntity with status 201 (Created) and with body the new employeeDTO, or with status 400 (Bad Request) if the employee has already an ID
-     * @throws URISyntaxException if the Location URI syntax is incorrect
-//     */
-//    @PostMapping("/employees")
-//    public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody EmployeeDTO employeeDTO) throws URISyntaxException {
-//        log.debug("REST request to save Employee : {}", employeeDTO);
-//        if (employeeDTO.getId() != null) {
-//            throw new ValidationException("A new employee cannot already have an ID");
-//        }
-//        
-//        Employee result = employeeService.save(mapper.map(employeeDTO, Employee.class));
-//        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result.getId())
-//				.toUri();
-//        
-//        return ResponseEntity.created(location).body(mapper.map(result, EmployeeDTO.class));
-//    }
-//    
     @PostMapping("/employees")
     public String createOrUpdate(EmployeeDTO employeeDTO) {
     	log.debug("REST request to save Employee : {}", employeeDTO);
@@ -109,6 +88,6 @@ public class EmployeeResource {
         log.debug("REST request to delete Employee : {}", id);
         employeeService.delete(id);
         
-        return "employees";
+        return "redirect:/employees";
     }
 }

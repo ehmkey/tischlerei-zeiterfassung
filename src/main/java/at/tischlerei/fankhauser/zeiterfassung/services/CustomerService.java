@@ -1,12 +1,12 @@
 package at.tischlerei.fankhauser.zeiterfassung.services;
 
+import java.util.List;
+
 import javax.persistence.EntityNotFoundException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,16 +36,10 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    /**
-     * Get all the customers.
-     *
-     * @param pageable the pagination information
-     * @return the list of entities
-     */
-    @Transactional(readOnly = true)
-    public Page<Customer> findAll(Pageable pageable) {
+
+    public List<Customer> findAll() {
         log.debug("Request to get all Customers");
-        return customerRepository.findAll(pageable);
+        return customerRepository.findAll();
     }
 
     /**

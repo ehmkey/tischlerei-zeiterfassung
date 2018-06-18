@@ -41,8 +41,6 @@ public class Employee{
 
     private LocalDate birthday;
 
-    private String address;
-
     @Column(name = "date_of_joining")
     private LocalDate dateOfJoining;
 
@@ -54,4 +52,10 @@ public class Employee{
     private String bic;
 
     private String bankname;
+    
+    private String zip;
+
+    private String street;
+
+    private String city;
 }

@@ -10,76 +10,129 @@
 		<div>
 			<form class="form-horizontal" th:object="${employee}"
 				th:action="@{/employees}" method="post">
+
 				<div class="form-group">
 					<div class="col-sm-10">
 						<input type="hidden" class="form-control" th:field="*{id}" />
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="form-group">
-						<label class="control-label">Vorname:</label> <input type="text"
-							class="form-control" th:field="*{firstname}" />
-					</div>
-					<div class="form-group">
-						<label class="control-label">Nachname:</label> <input type="text"
-							class="form-control" th:field="*{lastname}" />
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="form-group">
-						<label class="control-label">Telefonnummer:</label> <input
-							type="text" class="form-control" th:field="*{phone}" />
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Vorname</label>
+						<input type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Vorname" th:field="*{firstname}">
 					</div>
-
-					<div class="form-group" id="datepicker-container">
-						<label class="control-label">Geburtstag:</label> <input
-							type="text" class="form-control" th:field="*{birthday}">
-					</div>
-
-					<div class="form-group" id="datepicker-container">
-						<label class="control-label">Eintrittsdatum:</label> <input
-							type="text" class="form-control" th:field="*{dateOfJoining}">
-					</div>
-
-				</div>
-
-				<div class="row">
-					<div class="form-group">
-						<label class="control-label">Adresse:</label> <input type="text"
-							class="form-control" th:field="*{address}" />
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Nachname</label>
+						<input type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Nachname" th:field="*{lastname}" required>
 					</div>
 				</div>
 
 
-				<div class="row">
-					<div class="form-group">
-						<label class="control-label">Stundensatz:</label> <input
-							type="text" class="form-control" th:field="*{hourlyRate}" />
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Telefonnummer</label>
+						<input type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Telepfonnummer" th:field="*{phone}">
 					</div>
-					<div class="form-group">
-						<label class="control-label">IBAN:</label> <input type="text"
-							class="form-control" th:field="*{iban}" />
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group">
-						<label class="control-label">BIC:</label> <input type="text"
-							class="form-control" th:field="*{bic}" />
-						<div class="form-group">
-							<label class="control-label">Bank:</label> <input type="text"
-								class="form-control" th:field="*{bankname}" />
+					<div class="col-auto" id="datepicker-container">
+						<label class="col-form-label" for="inlineFormInput">Geburtstag</label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fas fa-calendar-alt"></i>
+								</div>
+							</div>
+							<input type="text" class="form-control" id="inlineFormInputGroup"
+								placeholder="dd.mm.yyyy" th:field="*{birthday}">
 						</div>
-
 					</div>
 				</div>
 
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Save</button>
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Stundensatz</label>
+						<input type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Stundensatz" th:field="*{hourlyRate}">
+					</div>
+					<div class="col-auto" id="datepicker-container">
+						<label class="col-form-label" for="inlineFormInput">Eintrittsdatum</label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fas fa-calendar-alt"></i>
+								</div>
+							</div>
+							<input type="text" class="form-control"
+								th:field="*{dateOfJoining}" placeholder="dd.mm.yyyy">
+						</div>
+					</div>
 				</div>
 
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Straße</label>
+						<input type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Straße" th:field="*{street}">
+					</div>
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">PLZ</label> <input
+							type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="PLZ" th:field="*{zip}">
+					</div>
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Ort</label> <input
+							type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Ort" th:field="*{city}">
+					</div>
+				</div>
+
+				<div class="form-row align-items-center">
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">IBAN</label> <input
+							type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="IBAN" th:field="*{iban}">
+					</div>
+
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">BIC</label> <input
+							type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="BIC" th:field="*{bic}">
+					</div>
+
+					<div class="col-auto">
+						<label class="col-form-label" for="inlineFormInput">Bank</label> <input
+							type="text" class="form-control mb-2" id="inlineFormInput"
+							placeholder="Bank" th:field="*{bankname}">
+					</div>
+				</div>
+
+				<div class="form-group" style="padding-left: 15px; padding-top: 15px;">
+					<div class="row">
+
+						<div class="btn-group mr-2">
+							<a href="/employees" class="btn btn-secondary" role="button"
+								aria-pressed="true"><i class="far fa-caret-square-left"></i>
+								Zurück</a>
+
+						</div>
+						<div class="btn-group mr-2">
+							<div th:if="${id == null}">
+								<button type="submit" class="btn btn-primary">
+									Speichern <i class="far fa-save"></i>
+								</button>
+							</div>
+							<div th:if="${id != null}">
+								<button type="submit" class="btn btn-primary">
+									Speichern <i class="far fa-save"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
 			</form>
 		</div>

@@ -33,7 +33,11 @@ public class Customer {
 
     private String phone;
 
-    private String contact;
+    private String additonalInformation;
 
-    private String address;
+    private String zip;
+
+    private String street;
+
+    private String city;
 }
